@@ -1,0 +1,18 @@
+<svg width="240" height="280" viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="navy" x1="35" y1="22" x2="188" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B315A"/>
+      <stop offset="1" stop-color="#071F3A"/>
+    </linearGradient>
+  </defs>
+  <path d="M120 10L220 46V140C220 202 179 244 120 272C61 244 20 202 20 140V46L120 10Z" fill="#FBFAF6" stroke="#0A2B4E" stroke-width="12"/>
+  <path d="M120 28L201 57V138C201 188 168 224 120 248C72 224 39 188 39 138V57L120 28Z" fill="url(#navy)"/>
+  <path d="M54 67H89V171H54V67Z" fill="#F6F4EF"/>
+  <path d="M89 67H120V171H89V67Z" fill="#9E233C"/>
+  <path d="M120 67H151V171H120V67Z" fill="#F6F4EF"/>
+  <path d="M151 67H186V171H151V67Z" fill="#D9B45D"/>
+  <circle cx="120" cy="126" r="41" fill="#0A2B4E" stroke="#F6F4EF" stroke-width="7"/>
+  <path d="M120 94L132 103L128 119H112L108 103L120 94Z" fill="#F6F4EF"/>
+  <path d="M88 194C108 179 132 179 152 194C165 204 178 206 190 202V219C175 224 159 219 145 209C129 197 111 197 95 209C81 219 65 224 50 219V202C62 206 75 204 88 194Z" fill="#F6F4EF"/>
+  <path d="M112 38L120 22L128 38L146 41L133 54L136 72L120 64L104 72L107 54L94 41L112 38Z" fill="#9E233C"/>
+</svg>
