@@ -1,0 +1,47 @@
+name: Apply MonEquip site bundle
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site-bundle.zip"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply uploaded site bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f site-bundle.zip ]; then
+            echo "No site-bundle.zip found; nothing to apply."
+            exit 0
+          fi
+
+          unzip -o site-bundle.zip -d .
+          rm -f site-bundle.zip
+
+          # Remove the temporary low-quality converted assets from the first deploy.
+          rm -f assets/favicon.webp assets/monequip-mark.webp
+          rm -f assets/screens/*.webp
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Restore approved MonEquip website assets"
+          git push origin HEAD:main
